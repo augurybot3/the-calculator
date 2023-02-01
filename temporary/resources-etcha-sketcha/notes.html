@@ -1,0 +1,154 @@
+<!--There is no one-size-fits all answer to this question, as the implementation will vary depending on the specific
+requirements of the project. However, some tips on using flexbox with JavaScript to create a grid layout include:
+
+1.Use the flexbox model to define the overall structure of the grid.
+
+2.Use CSS media queries to specify the number of columns and breakpoints for different screen sizes
+
+3.Use JavaScript to dynamically generate the HTML for each grid item.
+
+4.Use CSS to style the grid items, including setting the width, height, and margins.-->
+
+
+
+<HTML>
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Page Title</title>
+    <href src="/Odin/etch-a-sketch.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet">
+
+        <style>
+            
+            /*4.Use CSS to style the grid items, including setting the width, height, and margins.*/
+            
+            .grid-container {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .grid {
+                display: flex;
+                flex-wrap: wrap;
+            } 
+            
+            /*2.Use CSS media queries to specify the number of columns and breakpoints for different screen sizes */
+            
+            @media (min-width: 1200px) {
+                .grid {
+                    flex: 0 0 25%;
+                }
+            }
+            
+            .grid-item {
+                width: calc(100% / 3);
+                height: calc(100% / 3);
+            }
+            </style>
+            </head>
+<body>
+
+    <div id="grid-container">
+        <div class="grid" id="grid">
+        </div>
+    </div>
+    
+
+
+
+    <script>
+        
+/* 1.Use JavaScript to dynamically generate the HTML for each grid item */
+
+
+// 3. Use Javascript to dynamically create the HTML elements
+// or in this case, the grid.
+
+//WHAT I KNOW AS OF NOW: The goal of this first part of the javascript
+// is to dynamically create HTML elements that will be the grid.
+// I know that I need to create a function that will create the grid
+// and then call that function in the HTML file.
+// I also know that I need to create a variable that will be the
+// number of either rows or columns or possibly both that will be
+// created in the grid. I am considering two hypothetical scenarios.
+
+//HYPOTHESIS 1: We only need one 'for (loop){action}' because we do not need
+// to differentiate between rows and columns. We can just create
+// a grid with the same number of rows and columns, creating <div>'s.
+// because the grid is a square, we can just use one variable
+// as well as the fact that the <div>'s are going to be brought into
+// rows and columns by the CSS display: grid property and the 
+// grid-template-columns: repeat(x, y) property.
+
+<a script src=
+
+// (possible drawbacks to this solution: Screen sizes vary in density and size and 
+// therefore the grid may be too large on mobile devices or older monitors.
+// this is because, while the grid has the potential to be flexible, i am relying on
+// the explicit overflow of the columns to create the rows and therefore will not
+// be able to have a dynamically sized container/ grid -more that likely. 
+// there's a chance i may be able to create a limit on the size or possibly 
+// even find a way to receive the info for the screen size and plug that in as 
+// variable but that may be taking things a bit too far....)
+
+// HYPOTHESIS 2: A for loop within a for loop will create a grid.
+// By passing the value of i into the inner for loop, we can create
+// a grid with the same number of rows and columns.
+// The inner for loop will create the columns, and the outer loop
+// will create the rows. The CSS will be for pure styling purposes
+// and to apply filters or colors to the grid.
+
+// ( i don't know how to do this just yet. I am attempting to avoid
+// some of the other tools that people have been submitting with 
+// their projects because, if I am able to accomplish this without 
+// using a pre-made grid library or using jquery, since we haven't 
+// been introduced to that yet.... i think the purpose of this project
+// is to demonstrate a deeper understanding of the fundamentals - as
+// that is the name of the section in this course after all. wish me luck....)
+
+/*3.Use JavaScript to dynamically generate the HTML for each grid item.*/
+
+function createGridContainer() {
+    var gridContainer = document.createElement("div");
+    gridContainer.className = "grid-container";
+    var grid = createGrid();
+    gridContainer.appendChild(grid);
+    return gridContainer;
+}
+
+var gridContainer = createGridContainer();
+document.body.appendChild(gridContainer);
+
+        function generateGridItem(item) {
+            var gridItem = document.createElement("div");
+            gridItem.className = "grid-item";
+            gridItem.innerHTML = "<img src='" + item.image + "' alt='" + item.name + "'>";
+            gridItem.innerHTML += "<h3>" + item.name + "</h3>";
+            gridItem.innerHTML += "<p>" + item.description + "</p>";
+            gridItem.innerHTML += "<p>$" + item.price + "</p>";
+            gridItem.innerHTML += "<button>Add to Cart</button>";
+            return gridItem;
+        }
+
+        /*2.Use JavaScript to add each grid item to the page*/
+
+        function addGridItems(items) {
+            var grid = document.getElementById("grid");
+            for (var i = 0; i < items.length; i++) {
+                var gridItem = generateGridItem(items[i]);
+                grid.appendChild(gridItem);
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</HTML>

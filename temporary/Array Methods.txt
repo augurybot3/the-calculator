@@ -1,0 +1,530 @@
+
+
+
+			https://www.w3schools.com/js/js_array_methods.asp
+
+				see also
+
+			https://www.w3schools.com/js/js_arrays.asp
+
+				Arrays.txt
+
+				Looping Code MDN web doc notes.txt
+
+				JavaScript Array Methods and Properties.txt	
+
+
+
+	     splice
+                               -
+		      |  △
+		      V  |
+      shift                  --	     pop
+       - <--| ---------------    |--> - 
+			      
+	
+        --> -| -------------------|- <--push
+   unshift      	  |  
+		  V
+		 ---
+		slice
+
+		
+		toString()
+			
+
+
+		letters.join("*");
+
+	[a, b, c, d] -> a * b * c * d
+
+
+		
+			
+
+
+	--- toString() ---
+
+
+		the javascript method toString() converts an array to a string of (comma seperated) array values
+
+
+		
+
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+docuemtn.getElementById("demo").innerHTML = fruits.toString();
+
+	
+		RETURNS Banana,Orange,Apple,Mango
+
+
+
+
+
+	--- join() ---
+
+		"took the list of names and strung them togehter, hanging them up with any character in between  "
+
+
+
+		The join() method also joins all array elements into a string.
+
+		It behaves just like toString(), but in addition you can specify the separator:
+
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+document.getElementById("demo1").innerHTML = fruits.join(" * ");
+
+	RETURNS Banana * Orange * Apple * Mango
+
+
+
+	--- pop() ---
+
+
+		the pop method removes the last element from an array:
+
+
+
+		"the gaseous bubble inside the soda must travel through the liquid, to the end, before it can pop."
+
+		"only the bubbles at the end of the soda can pop"
+
+		"a bubble can't pop inside the soda. It isn't until it reaches the end, where there's air that it can pop"
+
+
+
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits;fruits.pop();	***or document.getElementById("demo1").innerHTML = fruits;fruits.pop();
+
+	RETURNS Banana,Orange,Apple,Mango
+
+document.getElementById("demo2").innerHTML = fruits;
+
+	RETURNS Banana,Orange,Apple
+
+		
+		the pop() method returns the value that was popped out:
+
+
+fruits.pop();	***or document.getElementById("demo1").innerHTML = fruits.pop();
+
+	RETURNS Mango
+
+
+
+	--- push() ---
+
+
+		the push() adds a new element to an array (at the end):
+
+		
+		"It didn't take much to get him to join the congo line. just a little push"
+
+
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits;fruits.push("Kiwi");    ***or document.getElementById("demo1").innerHTML = fruits;fruits.push("Kiwi");
+
+	RETURNS Banana,Orange,Apple,Mango
+
+document.getElementById("demo2).innerHTML = fruits;
+
+	RETURNS Banana,Orange,Apple,Mango,Kiwi
+
+		
+
+		The push() method returns the new array length:
+
+
+fruits.push()	***or document.getElementById("demo1").innerHTML = fruits.push("Kiwi")
+
+	RETURNS 5
+
+document.getElementById("demo2").innerHTML = fruits;
+
+	RETURNS Banana,Orange,Apple,Kiwi
+
+
+
+
+	--- shift() --- 
+
+		"we all had to shift our positions in line when the person at the start went through the checkout"
+
+		"the other opposite of pop()"
+
+
+		The shift() method removes the first array element and "shifts" all other elements to a lower index.
+			***fruits;fruits.shift() returns the original array although apparently now
+						 it has been "shifted"
+						 to see the new array you have to call on it again normally
+						 without the .shift() appendage to see it
+
+
+						
+
+		The shift() method returns the value that was "shifted out":
+			***fruits.shift().  this will return the index item that was positioned at [0]
+
+						
+						
+						when you add the const array name and a ;
+						you are rerouting around the returned value that was shifted out
+
+						so if you say; fruits;fruits.shift(); 
+							you are telling it to display the original array
+								and then shift the index [0] out
+
+						if you say: fruits.shift()
+							you are telling it to shift out the index[0]
+								and just display the removed element not the array
+
+
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits;fruits.shift(); 	 ***or document.getElementById("demo1").innerHTML = fruits;fruits.shift();
+
+	RETURNS  Banana,Orange,Apple,Mango
+
+document.getElementById("demo2").innerHTML = fruits;
+
+	RETURNS Orange,Apple,Mango
+
+
+			The shift() method returns the value that was "shifted out":
+
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+document.getElementById("demo1").innerHTML = fruits.shift();
+
+	RETURNS Banana
+
+document.getElementById("demo2").innerHTML = fruits;
+
+	RETURNS Orange,Apple,Mango
+
+
+
+	----  unshift() ---
+
+
+			The unshift() method returns the length of the new array
+
+
+			"We all had to unshift our positions in line, when that old lady cut in front of us."
+
+
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+document.getElementById("demo1").innerHTML = fruits.unshift("Lemon");
+
+	RETURNS 5
+
+document.getElementById("demo2").innerHTML = fruits;
+
+	RETURNS Lemon,Banana,Orange,Apple,Mango
+
+
+
+	----  Changing Elements using javascript array indexes [0] -----
+
+
+
+Array indexes start with 0:
+
+	[0] is the first array element
+	[1] is the second
+	[2] is the third ...
+
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits;fruits[0] = "Kiwi";   ***replaces item [0]
+
+	RETURNS	Kiwiw,Orange,Apple,Mango
+
+
+
+	--- Javascript Array Length ---
+
+
+		the length property provides an easy way 
+		to append new elements to an array
+		without using the push() method
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+fruits;fruits[fruits.length] = "Kiwi";
+
+	RETURNS Banana,Orange,Apple,Mango,Kiwi
+
+
+
+
+	--- javascript array delete ---
+
+
+			Array elements can be deleted using the 
+			JavaScript operator delete.
+	
+			Using delete leaves undefined holes in the 
+			array.
+
+			Use pop() or shift() instead.
+
+
+delete fruits[0];
+
+
+
+	---  concat()  ---
+
+			The concat() method creates a new array by 
+			merging (concatenating) existing arrays:
+	
+			The concat() method does not change the existing 
+			arrays. It always returns a new array.
+
+			The concat() method can take any number of array 
+			arguments:
+
+			The concat() method can also take strings as 
+			arguments:
+
+
+
+const myGirls = ["Cecilie", "Lone"];
+
+const myBoys = ["Emil", "Tobias", "Linus"];
+
+const myChildren = myGirls.concat(myBoys);
+
+	RETURNS Cecilie,Lone,Emil,Tobias,Linus
+
+
+const arr1 = ["Cecilie", "Lone"];
+
+const arr2 = ["Emil", "Tobias", "Linus"];
+
+const arr3 = ["Robin", "Morgan"];
+
+const myChildren = arr1.concat(arr2, arr3);
+
+	RETURNS Cecilie,Lone,Emil,Tobias,Linus,Robin,Morgan
+
+
+const myArray = ["Emil", "Tobias", "Linus"];
+
+const myChildren = myArray.concat("Peter");
+
+	RETURNS Emil,Tobias,Linus,Peter
+
+
+		---  splice()  --- 
+
+	
+	sugically "pushes" an item into an array by defining coordinates and can also replace any number of items in the array
+	
+	"when the doctor spliced the patient's genes she added what she needed to but she also removed a portion of his chromosomes, 	knowing full well it was unnecessary."
+	
+
+
+			Splicing and Slicing Arrays
+
+
+			The splice() method adds new items to an array.
+
+			The splice() method can be used to add new items to an array:
+
+			the first parameter (2) defines the position where new elements should be added
+
+			the second parameter (0) defines how many elelments should be removed
+
+			the rest of the parameters ("Lemon", "Kiwi") define the new elements to be added
+
+			the splice() method returns an array with the deleted items:
+
+			With clever parameter setting, you can use splice() to remove elements without leaving "holes" in the 			array:
+
+			The first parameter (0) defines the position where new elements should be added (spliced in).
+
+			The second parameter (1) defines how many elements should be removed.
+
+			The rest of the parameters are omitted. No new elements will be added.
+
+
+
+
+
+const frutis = ["Banana", "Orange", "Apple", "Mango"];
+
+document.getElementById("demo1").innerHTML = fruits.splice(2, 2, "Lemon", "Kiwi")
+
+	RETURNS Apple, Mango
+
+
+document.getElementById("demo2").innerHTML = fruits;
+
+	RETURNS Banana,Orange,Lemon,Kiwi
+
+
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"]
+
+document.getElementById("demo1").innerHTML = fruits.splice(0, 1);
+
+	RETURNS Orange
+
+
+document.getElemensById("demo2").innerHTML = fruits;
+
+	RETURNS Banana,Apple,Mango
+
+
+
+
+	---  slice() ---- 
+
+
+(it's like 'copy -> paste' not 'cut -> paste' except it selects a 'range' of items to copy).
+
+
+		"the pizzaman can take as many slices as he wishes, but the pie in the window remains the same."
+
+
+example: fruits.slice(3,5);
+
+RETURNS <a copy of items 3 through 5 in a new array>
+
+
+
+
+		the slice() method slices out a piece of an array into a new array
+		
+		This example slices out a part of array starting from array element 1 ("Orange"):
+
+		The slice() method creates a new array
+
+		The slice() method does not remove any elements from the source array:
+
+		The slice() method can take two arguments like slice(1, 3).
+
+		The method then selects elements from the start argument, and up to (but not including) the end argument.
+
+
+
+
+const fruits = ["Banana", "Lemon", "Orange", "Apple", "Mango"];
+
+const citrus = fruits.slice(1);
+
+document.getElementById("demo1).innerHTML = fruits + "<br><br>" + citrus;
+
+	RETURNS Banana,Orange,Lemon,Apple,Mango
+
+		Orange,Lemon,Apple,Mango
+
+
+
+const fruits = ["Banana", "Lemon", "Orange", "Apple", "Mango"];
+
+const citrus = fruits.slice(3);
+
+document.getElementById("demo1).innerHTML = fruits + "<br><br>" + citrus;
+
+	RETURNS Banana,Orange,Lemon,Apple,Mango
+
+		Apple,Mango
+
+
+
+
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+
+const citrus = fruits.slice(1,3);
+
+document.getElementById("demo").innerHTML = fruits + "<br><br>" + citrus;
+
+	RETURNS Banana,Orange,Lemon,Apple,Mango
+
+		Orange,Lemon
+
+
+
+
+
+	---  Automatic toString() ---
+
+
+
+		Javascript automatically converts an array to a comma seperated string when a primitive value is expected
+
+		This is always the case when you try to output an array
+
+		These two examples will produce the same result:
+
+
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+document.getElementById("demo").innerHTML = fruits.toString();
+
+	RETURN	Banana,Orange,Apple,Mango
+
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+document.getElementById("demo").innerHTML = fruits;
+
+	RETURN Banana,Orange,Apple,Mango
+
+
+
+
+
+		--- note ---
+
+		all javascript objects have a toString() method.
+
+
+
+
+
+
+	--- Finding Max and Min Values in an Array ---
+
+
+		there are no built-in functions for finding the highest or lowest value in a Javascript array.
+
+
+
+
+	--- Complete Array Reference ----
+
+
+		https://www.w3schools.com/jsref/jsref_obj_array.asp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

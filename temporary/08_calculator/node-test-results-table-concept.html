@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>javascript exercises testing field </title>
+</head>
+
+<body>
+  <style>
+
+    h1{
+    /* center the header element */
+      text-align: center;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-weight: 600;
+      font-style: bold;
+      font-size: 150px;
+    }
+    h2{
+      margin-top: -100px;
+      text-align: center;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-weight: 300;
+      font-style: bold;
+      font-size: 30px;
+    }
+    body{
+
+    }
+    p{
+      font-family: monospace;
+      font-weight: 200;
+    }
+    #tboy{
+      margin-top: 00px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 1200px;
+      height: 300px;
+
+    }
+    td{
+      width: 100px;
+      height: 100px;
+      text-align: center;
+      font-family: monospace;
+      font-size: 40px;
+    }
+
+  </style>
+<h1>
+  RESULTS
+</h1>
+<h2>
+  CALCULATOR JAVASCRIPT EXERCISES
+</h2>
+</div>
+<!-- create a table with 6 columns and 6 rows  -->
+<table id="tboy" border="2" cellspacing="5">
+  <tbody >
+    <tr id="headrow" class="tr">
+      <td> test</td>
+      <td> add </td>
+      <td> subtract</td>
+      <td> sum</td>
+      <td> multiply</td>
+      <td> power</td>
+      <td> factorial</td>
+    </tr>
+    <tr id='testType' class="tr">
+      <td>#</td>
+      <td>+</td>
+      <td>-</td>
+      <td>+=</td>
+      <td>*</td>
+      <td>Nⁿ</td>
+      <td>!</td>
+    </tr>
+    <tr id="test1" class="tr">
+      <td style="color: grey">1</td>
+      <td class="add"></td>
+      <td class="subtract"></td>
+      <td class="sum"></td>
+      <td class="multiply"></td>
+      <td class="power"></td>
+      <td class="factorial"></td>
+    </tr>
+    <tr id="test2" class="tr">
+      <td style="color: grey">2</td>
+      <td class="add"></td>
+      <td class="subtract"></td>
+      <td class="sum"></td>
+      <td class="multiply"></td>
+      <td class="power"></td>
+      <td class="factorial"></td>
+    </tr>
+    <tr id="test3" class="tr">
+      <td style="color: grey">3</td>
+      <td class="add"></td>
+      <td class="subtract"></td>
+      <td class="sum"></td>
+      <td class="multiply"></td>
+      <td class="power"></td>
+      <td class="factorial"></td>
+    </tr>
+    <tr id="test4" class="tr">
+      <td style="color: grey">4</td>
+      <td class="add"></td>
+      <td class="subtract"></td>
+      <td class="sum"></td>
+      <td class="multiply"></td>
+      <td class="power"></td>
+      <td class="factorial"></td>
+    </tr>
+    <tr id="test5" class="tr">
+      <td style="color: grey">5</td>
+      <td class="add"></td>
+      <td class="subtract"></td>
+      <td class="sum"></td>
+      <td class="multiply"></td>
+      <td class="power"></td>
+      <td class="factorial"></td>
+    </tr>
+  </tbody>
+
+ <script>
+// write  a function that takes a string and updates the text content of a <td> element
+    const add = document.querySelectorAll(".add");
+    const subtract = document.querySelectorAll(".subtract");
+    const sum = document.querySelectorAll(".sum");
+    const multiply = document.querySelectorAll(".multiply");
+    const power = document.querySelectorAll(".power");
+    const factorial = document.querySelectorAll(".factorial");
+    // const update = (plus, subt, summ, multi, pwr, fact, index) => {
+    //   add[index].textContent = plus;
+    //   subtract[index].textContent = subt;
+    //   sum[index].textContent = summ;
+    //   multiply[index].textContent = multi;
+    //   power[index].textContent = pwr;
+    //   factorial[index].textContent = fact;
+    // };
+    //Update status to pass or fail
+    // update("","","","","","",0);
+
+
+      const postAdd = (array) =>{
+        const index = array.entries();
+        for (let x of index){
+          add[x[0]].textContent = x[1];
+          console.log(x[1]);
+        };
+        };
+      const postSubtract = (array) =>{
+        const index = array.entries();
+        for (let x of index){
+          add[x[0]].textContent = x[1];
+          console.log(x[1]);
+        };
+        };
+
+        const postSum = (array) =>{
+        const index = array.entries();
+        for (let x of index){
+          add[x[0]].textContent = x[1];
+          console.log(x[1]);
+        };
+        };
+
+        const postMultiply = (array) =>{
+        const index = array.entries();
+        for (let x of index){
+          add[x[0]].textContent = x[1];
+          console.log(x[1]);
+        };
+        };
+
+        const postPower = (array) =>{
+        const index = array.entries();
+        for (let x of index){
+          add[x[0]].textContent = x[1];
+          console.log(x[1]);
+        };
+        };
+
+        const postFactorial = (array) =>{
+        const index = array.entries();
+        for (let x of index){
+          add[x[0]].textContent = x[1];
+          console.log(x[1]);
+        };
+        };
+        // if (result === 0 ){
+        //   return "✅";
+        // };
+        // add[index].textContent = result;
+      
+      
+
+      postAdd(["✅","✅","na","na","na"]);
+      postSubtract(["na","na","na","na","na"]);
+      
+      
+      
+     
+
+
+      
+      // console.log(postAdd([✅,✅,✅,✅,"❌"]));
+      </script>
+</body>
+
+</html>
