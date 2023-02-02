@@ -33,5 +33,37 @@ function operate(operator, num1, num2) {
         return num3;
 
 
-    }
-}
+    };
+};
+
+const display = document.querySelector('#display');
+
+        
+function displayValue() {
+    const numberButtons = document.querySelectorAll('.num');
+    const numberButtonsArray = [];
+    numberButtons.forEach(numberButton => {
+        numberButton.addEventListener('click', () => {
+            numberButtonsArray.push(numberButton.innerText);
+            if (numberButtonsArray.length === 1 && display.value === "0") {
+                display.value = numberButton.innerText;
+            } else {
+                display.value += numberButton.innerText;
+               
+                return display.value;
+            }})});
+        };
+        displayValue();
+
+
+
+
+
+
+
+
+
+
+
+
+
