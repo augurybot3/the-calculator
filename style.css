@@ -1,0 +1,86 @@
+#main-container {
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    padding-top: 100px;
+    
+}
+
+#cols-container {
+    display: grid;
+    grid-template-columns: 75px 75px 75px 75px;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px;
+    padding: 0px;
+    margin: 0px;
+}
+
+#cols-container button:nth-last-child(3) {
+    grid-column: span 2;
+}
+
+
+
+button {
+    font-family: monospace;
+    background-color: rgb(236, 235, 233);
+    border: 1px solid black;
+    color: black;
+    text-align: center;
+    font-size: 25px;
+    margin: 4px 4px 4px 4px;
+    opacity: 0.6;
+    transition: 0.3s;
+    cursor: pointer;
+    /* make the color shift when hovering over a button */
+    box-shadow: inset 2px 2px 1px 1px;
+    /* give each button a rounded corner of 5 px */
+    border-radius: 5px;
+    /* and an inner highlight on the top and left interior edges of each button */
+    box-shadow: inset -6px -6px 3px 3px rgba(245, 81, 21, 0.29);
+
+
+}
+
+button:hover {
+        background-color: rgb(73, 186, 246);
+    
+    box-shadow: inset -2px -2px 1px 1px;
+    border-radius: 10px;
+    box-shadow: inset 8px 8px 3px 3px rgba(245, 81, 21, 0.29);
+}
+ /* make it so that a button changes color after being pressed */
+button:active {
+    background-color: rgb(35, 216, 26);
+    border-radius: 10px;
+    box-shadow: inset 5px 5px 4px 3px rgba(17, 17, 17, 0.673);
+}
+
+#display {
+    height: 40px;
+    width: 300px;
+    font-size: 30px;
+    font-family: monospace;
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4px;
+    background-color: rgb(228, 227, 225);
+    box-sizing: border-box;
+}
+
+button.opp {
+    background-color: rgb(255, 172, 6);
+}
+
+button.equals{
+    background-color: rgb(120, 164, 247);
+}
+
+#percent, #plus-minus {
+    background-color: rgb(185, 208, 149);
+}
+
+#clear {
+    background-color: rgb(249, 51, 102);
+    font-size: 18px;;
+}

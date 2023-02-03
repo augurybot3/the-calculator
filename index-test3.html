@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>test3</title>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <!-- <script src="index.js" defer></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        #main-container {
+            /* border: 3px, black solid; */
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            padding-top: 100px;
+            /* background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.8)), url("https://res.cloudinary.com/augrybot/image/upload/v1662952528/images%20for%20reference/1000_F_467979895_DNM2QgV1QzxmjHFxd0QFACFoNWKCRV6s_bjy7c9.jpg"); */
+        }
+
+        #cols-container {
+            display: grid;
+            grid-template-columns: 130px 130px 130px 130px;
+            grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+            padding: 0px;
+            margin: 0px;
+
+        }
+
+        #zero {
+            grid-column: span 2;
+        }
+
+        button {
+            background-color: rgb(228, 227, 225);
+            border: none;
+            color: black;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 18px;
+            margin: 4px 2px;
+            opacity: 0.6;
+            transition: 0.3s;
+            cursor: pointer;
+
+
+        }
+
+        #display {
+            height: 40px;
+            width: 520px;
+            font-size: 30px;
+            font-family: 'Roboto';
+            text-align: right;
+            margin: auto;
+            background-color: rgb(228, 227, 225);
+            box-sizing: border-box;
+        }
+    </style>
+
+
+    <!-- STEP 3 -->
+    <!-- Create a basic HTML calculator with buttons for each digit, each of the above functions and an “Equals” key. -->
+    <!-- Do not worry about wiring up the JS just yet. -->
+    <!-- There should also be a display for the calculator.  -->
+    <!-- Go ahead and fill it with some dummy numbers so it looks correct. -->
+    <!-- Add a “clear” button. -->
+    <div id="main-container">
+        <div id="main-sub-container">
+            <input id="display" value="0"></input>
+            <div id="sub-container">
+                <div id="cols-container">
+                    <button id="clear" class="app" value="clear">Clear</button>
+                    <button id="percent" class="app" value="clear">%</button>
+                    <button id="plus-minus" class="app" value="clear">±</button>
+                    <button id="6" class="opp">/</button>
+                    <button id="7" class="num">7</button>
+                    <button id="8" class="num">8</button>
+                    <button id="9" class="num">9</button>
+                    <button id="times" class="opp">*</button>
+                    <button id="4" class="num">4</button>
+                    <button id="5" class="num">5</button>
+                    <button id="6" class="num">6</button>
+                    <button id="minus" class="opp">-</button>
+                    <button id="1" class="num">1</button>
+                    <button id="2" class="num">2</button>
+                    <button id="3" class="num">3</button>
+                    <button id="plus" class="opp">+</button>
+                    <button id="0" class="num">0</button>
+                    <button id="decimal" class="app">.</button>
+                    <button id="equals" class="equals">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script>
+let display = document.getElementById("display");
+let buttons = document.querySelectorAll("button");
+
+
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function() {
+    let value = buttons[i].getAttribute("id");
+    if (value === "clear") {
+      display.value = "";
+    } else if (value === "plus-minus") {
+      display.value = display.value * -1;
+    } else if (value === "equals") {
+      display.value = calculate(display.value);
+    } else {
+      display.value += value;
+    }
+  });
+}
+
+document.addEventListener("keydown", function(event) {
+  let key = event.key;
+  if (key >= "0" && key <= "9") {
+    display.value += key;
+  } else if (key === "+" || key === "-" || key === "*" || key === "/") {
+    display.value += key;
+  } else if (key === "." && !display.value.includes(".")) {
+    display.value += key;
+  } else if (key === "Enter" || key === "=") {
+    display.value = calculate(display.value);
+  } else if (key === "Escape" || key === "c" || key === "C") {
+    display.value = "";
+  }
+});
+
+
+function calculate(expression) {
+  let numbers = expression.split(/\+|\-|\*|\//g);
+  let operators = expression.match(/\+|\-|\*|\//g);
+
+  let result = parseFloat(numbers[0]);
+  for (let i = 0; i < operators.length; i++) {
+    let nextNumber = parseFloat(numbers[i + 1]);
+    switch (operators[i]) {
+      case "+":
+        result += nextNumber;
+        break;
+      case "-":
+        result -= nextNumber;
+        break;
+      case "*":
+        result *= nextNumber;
+        break;
+      case "/":
+        result /= nextNumber;
+        break;
+    }
+  }
+
+  return result;
+}
+
+
+
+
+
+    </script>
+</body>
+
+</html>

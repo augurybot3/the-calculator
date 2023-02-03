@@ -49,6 +49,8 @@
             transition: 0.3s;
             /* change the mouse hover to a pointer */
             cursor: pointer;
+
+
         }
 
         #display {
@@ -70,7 +72,7 @@
     <!-- Create a basic HTML calculator with buttons for each digit, each of the above functions and an “Equals” key. -->
     <!-- Do not worry about wiring up the JS just yet. -->
     <!-- There should also be a display for the calculator.  -->
-    <!-- Go ahead and fill it with some dummy colsbers so it looks correct. -->
+    <!-- Go ahead and fill it with some dummy numbers so it looks correct. -->
     <!-- Add a “clear” button. -->
 
     <!-- create a basic html calculator with buttons for each (digits 0-9), (add, subtract, multiply and divide operations keys), an (equals key) and a (decimal point) -->
@@ -103,9 +105,42 @@
             </div>
         </div>
     </div>
-
-
+    
+    
     <script>
+
+        let firstNumber = "";
+        let operator = "";
+        let screenValue = document.getElementById("display").value;
+        let secondNumber = "";
+
+        const clearAll = () => {
+            firstNumber = "";
+            operator = "";
+            screenValue = "";
+            secondNumber = "";
+        };
+
+        document.getElementById("clear").addEventListener("click", function (event) {
+            clearAll();
+            document.getElementById("display").value = "0";
+        });
+
+       
+
+        // create an event listener on each of the number buttons.
+        function saveNumber(number) {
+            if (operator === "") {
+                firstNumber = firstNumber + number;
+                document.getElementById("display").value = firstNumber + operator;
+            } else {
+                secondNumber = secondNumber + number;
+                document.getElementById("display").value = firstNumber + operator + secondNumber;
+            }
+        }
+
+
+
         // STEP 1   
         // create functions for the following items and test them in the browser console.
         // add
@@ -171,29 +206,46 @@
             return numberValues;
         }
         console.log(getNumberValues());
-        
+
         const display = document.querySelector('#display');
         console.log(display.value); // 0
-        
-        function displayValue() {
+
+        const numberSet = () => {
             const numberButtons = document.querySelectorAll('.num');
             const numberButtonsArray = [];
             numberButtons.forEach(numberButton => {
                 numberButton.addEventListener('click', () => {
                     numberButtonsArray.push(numberButton.innerText);
                     if (numberButtonsArray.length === 1 && display.value === "0") {
+                        screenValue = "";
                         display.value = numberButton.innerText;
                     } else {
                         display.value += numberButton.innerText;
-                        // console.log(display.value); // updated amount in display
+
                         return display.value;
-                    }})});
-                    console.log(display.value); // updated amount in display
-                };
-                displayValue();
-                // 
-               
+                    }
+                })
+            });
+        };
+        numberSet();
+        // STEP 5
+        // make the calculator work! You'll need to store the first number that is input
+        // into the calculator when a user presses an operator, and also save
+        // which operation has been chosen and then operate() on them when the user
+        // presses the "=" key.
+
+        // once operate() has been called, update the display with the 'solution' to the operation
+        // you'll need to figure out how to store all the values and call the operate function with them.
+
+        // store the first number that is input
+        // into the calculator when a user presses an operator, and also save
+        // which operation has been chosen and then operate() on them when the user
+        // presses the "=" key.
         
+        
+        
+
+
 
 
     </script>
