@@ -6,6 +6,17 @@ let previousInput = '';
 let operator = null;
 display.value = '0';
 
+///////////////////////////////////////////////
+
+function clear() {
+    display.value = "0";
+    currentInput = '';
+    previousInput = '';
+    operator = null;
+};
+
+//////////////////////////////////////
+
 function handleCalculation(event) {
     let key = event.key || event.target.textContent;
     if (key >= "0" && key <= "9") {
@@ -28,33 +39,42 @@ function handleCalculation(event) {
         display.value = calculate(previousInput, operator, currentInput);
         previousInput = display.value;
         currentInput = '';
-    } else if (key === "Clear" || key === "c" || key === "C") {
-        currentInput = '';
-        previousInput = '';
-        operator = null;
-        display.value = '0';
+    } else if (key === "Clear" || key === "C") {
+        clear();
+    } else if (key === "Escape") {
+        clear();
     } else if (key === "Backspace" || key === "Delete") {
-        display.value = display.value.substring(0, display.value.length - 1);
-        currentInput = display.value.substring(0, display.value.length - 1);
+        if (display.value.length <= 1 || display.value === 0) {
+            clear();
+        } else {
+            display.value = display.value.substring(0, display.value.length - 1);
+            currentInput = display.value.substring(0, display.value.length - 1);
+        };
     }
-  
+
     else if (key === "%") {
         currentInput = display.value;
         currentInput = currentInput / 100;
         display.value = currentInput;
     }
-   
+
     else if (key === "_" || key === "±") {
         currentInput = display.value;
         display.value = currentInput * -1;
-    }  ;
+    };
 };
 
+/////////////////////////////////////////
+
 document.addEventListener("keydown", handleCalculation);
+
+///////////////////////////////////////////
 
 for (let button of buttons) {
     button.addEventListener("click", handleCalculation);
 }
+
+////////////////////////////////////////////////////////
 
 function calculate(a, op, b) {
 
@@ -93,3 +113,5 @@ function calculate(a, op, b) {
     return result;
 
 };
+
+///////////////////////////////////////////
