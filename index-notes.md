@@ -40,12 +40,12 @@ divide
 
 //which then defeats the purpose of the <input> element and decreases the novelty value of being able to copy the results to the clipboard.
 
-// the other option is to disable the input field all-togther as editable and instead to create a copy button.
+// the other option is to disable the input field all-together as editable and instead to create a copy button.
 
 // Here is some code i was starting to write in order to implement that. Not entirely sure how I would want this to work and where and how I might dynamically populate the DOM with a new "copy to clipboard" button.
 
 // truthfully all of this
-// of course is alot further beyond the scope of my assignments and a pretty unnecessary feature
+// of course is a lot further beyond the scope of my assignments and a pretty unnecessary feature
 // I'm supposed to be moving forward and ultimately I need to 
 // manage my time more efficiently. I hope to return to this issue if it seems like any of this may be usable as some sort of portfolio project. 
 
