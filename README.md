@@ -2,7 +2,7 @@
 a browser based web application that calculates mathematical expressions dependent on user input
 
 This software experience has been developed as an educational exercise for learning web development proposed by the Odin Project. 
-This is the final project of the 'javascript basics' section as well as the final project of the first half of the full-stack development course entitled 'foundaations'. As the instructions for this assignment state, the goal in making this calculator is to challenge myself to impliment the broad spectrum of skills that I've gained so far in the course as well as further exploring for solutions if needed by researching and discovering new methods in coding. 
+This is the final project of the 'javascript basics' section as well as the final project of the first half of the full-stack development course entitled 'foundations'. As the instructions for this assignment state, the goal in making this calculator is to challenge myself to implement the broad spectrum of skills that I've gained so far in the course as well as further exploring for solutions if needed by researching and discovering new methods in coding. 
 
 //////////Here are the instructions found in the Odin Project:////////
 
